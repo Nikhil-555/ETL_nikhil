@@ -51,5 +51,3 @@ def fetch_date_value(conn1):
 conn1 = connect_to_redshift()
 fetch_date_value(conn1)
 
-
-conn1.close()
