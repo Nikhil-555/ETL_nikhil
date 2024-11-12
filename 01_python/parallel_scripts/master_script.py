@@ -5,7 +5,7 @@ scripts_folder = r"C:\Nikhil\ETL_PYTHON\ETL_nikhil\01_python\parallel_scripts"
 
 # List the Python scripts in the exact order they should run
 python_scripts = [
-    'oracle_to_s3.py', 's3_to_stage.py', 'stage_to_dw.py'
+    'start_batch.py', 'oracle_to_s3.py', 's3_to_stage.py', 'stage_to_dw.py', 'end_batch.py'
 ]
 print("Scripts to run in order:", python_scripts)
 
