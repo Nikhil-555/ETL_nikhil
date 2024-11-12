@@ -147,5 +147,5 @@ def main(table_name, columns):
     conn2.close()
 
 table_name = "offices"
-columns = ["officeCode", "city", "phone", "addressLine1", "postalCode", "country", "territory"]
+columns = ['OFFICECODE', 'CITY', 'PHONE', 'ADDRESSLINE1', 'ADDRESSLINE2', 'STATE', 'COUNTRY', 'POSTALCODE', 'TERRITORY', 'CREATE_TIMESTAMP', 'UPDATE_TIMESTAMP']
 main(table_name, columns)

@@ -141,5 +141,5 @@ def main(table_name, columns):
     conn2.close()
 
 table_name = "payments"
-columns = ["customerNumber", "checkNumber", "paymentDate", "amount"]
+columns = ['CUSTOMERNUMBER', 'CHECKNUMBER', 'PAYMENTDATE', 'AMOUNT', 'CREATE_TIMESTAMP', 'UPDATE_TIMESTAMP']
 main(table_name, columns)

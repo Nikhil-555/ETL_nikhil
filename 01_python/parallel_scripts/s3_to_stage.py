@@ -1,8 +1,9 @@
 import os
+
 from concurrent.futures import ThreadPoolExecutor
 
 # Define the folder where your Python scripts are located
-scripts_folder = r"C:\Users\nikhil.pabbithi\Desktop\etl python training\ETL_nikhil\01_python\s3_to_stage_scripts"
+scripts_folder = r"C:\Nikhil\ETL_PYTHON\ETL_nikhil\01_python\s3_to_stage_scripts"
 
 # Get all Python scripts in the folder
 python_scripts = ['customers.py', 'employees.py', 'offices.py', 'orderdetails.py', 'orders.py', 'payments.py', 'productlines.py', 'products.py']
@@ -17,7 +18,7 @@ def run_script(script):
 
 # Function to run scripts in parallel
 def run_scripts_in_parallel(scripts):
-    with ThreadPoolExecutor() as executor:
+    with ThreadPoolExecutor() as executor:  
         results = executor.map(run_script, scripts)
         for result in results:
             print(result)
@@ -31,15 +32,16 @@ if __name__ == '__main__':
 
 
 ### Method - 2
+# import os
 
 # from multiprocessing import Process
 
 
 # # Define the folder where your Python scripts are located
-# scripts_folder = r"C:\Users\nikhil.pabbithi\Downloads\ETL Python"
+# scripts_folder = r"C:\Users\nikhil.pabbithi\Desktop\etl python training\ETL_nikhil\01_python\s3_to_stage_scripts"
 
 # # Get all Python scripts in the folder
-# python_scripts = [f for f in os.listdir(scripts_folder) if f.endswith('.py')]
+# python_scripts = ['customers.py', 'employees.py', 'offices.py', 'orderdetails.py', 'orders.py', 'payments.py', 'productlines.py', 'products.py']
 
 # # Function to run each script
 # def run_script(script):

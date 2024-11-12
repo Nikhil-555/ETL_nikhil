@@ -140,5 +140,5 @@ def main(table_name, columns):
     conn2.close()
 
 table_name = "customers"
-columns = ["customerNumber", "customerName", "contactLastName", "contactFirstName", "phone", "addressLine1", "city", "country"]
+columns = ['CUSTOMERNUMBER', 'CUSTOMERNAME', 'CONTACTLASTNAME', 'CONTACTFIRSTNAME', 'PHONE', 'ADDRESSLINE1', 'ADDRESSLINE2', 'CITY', 'STATE', 'POSTALCODE', 'COUNTRY', 'SALESREPEMPLOYEENUMBER', 'CREDITLIMIT',  'CREATE_TIMESTAMP', 'UPDATE_TIMESTAMP']
 main(table_name, columns)

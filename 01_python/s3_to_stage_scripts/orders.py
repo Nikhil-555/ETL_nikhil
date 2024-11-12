@@ -25,7 +25,7 @@ print("Date Value:", etl_batch_date)
 
 #query to copy data 
 query = f"""
-COPY nikhil_db.devstage.orders (ordernumber, orderdate, requireddate, shippeddate, status, customernumber) 
+COPY nikhil_db.devstage.orders (ORDERNUMBER, ORDERDATE, REQUIREDDATE, SHIPPEDDATE, STATUS, CUSTOMERNUMBER, CREATE_TIMESTAMP, UPDATE_TIMESTAMP) 
 FROM 's3://etl-python-bucket/orders/{etl_batch_date}/orders.csv' 
 IAM_ROLE '{IAM_ROLE}'
 FORMAT AS CSV DELIMITER ',' DATEFORMAT 'auto' QUOTE '"' IGNOREHEADER 1 REGION AS 'eu-north-1'
@@ -35,7 +35,7 @@ FORMAT AS CSV DELIMITER ',' DATEFORMAT 'auto' QUOTE '"' IGNOREHEADER 1 REGION AS
 
 # Execute the COPY command
 try:
-    cursor.execute('truncate devstage.orders;')
+    cursor.execute('truncate nikhil_db.devstage.orders;')
     cursor.execute(query)
     conn.commit()
     print("Data loaded successfully from S3 to Redshift.")
