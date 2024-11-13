@@ -60,7 +60,7 @@ transfer_query = [
                 o.dw_customer_id,
                 COUNT(DISTINCT o.dw_order_id) AS order_count,
                 1 AS order_apd,
-                SUM(od.priceEach * od.quantityOrdered) AS order_amount,
+                COALESCE(SUM(od.priceEach * od.quantityOrdered), 0) AS order_amount,
                 SUM(p.buyPrice * od.quantityOrdered) AS order_cost_amount,
                 SUM(p.MSRP * od.quantityOrdered) AS order_mrp_amount,
                 COUNT(DISTINCT od.src_productCode) AS products_ordered_qty,
@@ -76,9 +76,9 @@ transfer_query = [
                 0 AS new_customer_apd,
                 0 AS new_customer_paid_apd
             FROM devdw.Orders o
-            JOIN devdw.OrderDetails od ON o.dw_order_id = od.dw_order_id
+            JOIN devdw.OrderDetails od ON o.dw_order_id = od.dw_order_id AND o.dw_order_id IS NOT NULL AND od.dw_order_id IS NOT NULL
             JOIN devdw.Products p ON od.dw_product_id = p.dw_product_id
-            WHERE o.orderDate >= '{etl_batch_date}'::DATE  -- etl_batch_date parameter
+            WHERE CAST(o.orderDate AS DATE) >= '{etl_batch_date}'::DATE  -- etl_batch_date parameter
             GROUP BY CAST(o.orderDate AS DATE),
                     o.dw_customer_id
 
