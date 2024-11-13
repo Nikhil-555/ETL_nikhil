@@ -25,7 +25,7 @@ print("Date Value:", etl_batch_date)
 
 #query to copy data 
 query = f"""
-COPY nikhil_db.devstage.orders (ORDERNUMBER, ORDERDATE, REQUIREDDATE, SHIPPEDDATE, STATUS, CUSTOMERNUMBER, CREATE_TIMESTAMP, UPDATE_TIMESTAMP) 
+COPY nikhil_db.devstage.orders (ORDERNUMBER, ORDERDATE, REQUIREDDATE, SHIPPEDDATE, STATUS, CUSTOMERNUMBER, CREATE_TIMESTAMP, UPDATE_TIMESTAMP, CANCELLEDDATE) 
 FROM 's3://etl-python-bucket/orders/{etl_batch_date}/orders.csv' 
 IAM_ROLE '{IAM_ROLE}'
 FORMAT AS CSV DELIMITER ',' DATEFORMAT 'auto' QUOTE '"' IGNOREHEADER 1 REGION AS 'eu-north-1'
