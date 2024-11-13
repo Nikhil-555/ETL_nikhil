@@ -142,5 +142,5 @@ def main(table_name, columns):
 
 
 table_name = "productlines"
-columns = ["productLine"]
+columns = ['PRODUCTLINE', 'CREATE_TIMESTAMP', 'UPDATE_TIMESTAMP']
 main(table_name, columns)

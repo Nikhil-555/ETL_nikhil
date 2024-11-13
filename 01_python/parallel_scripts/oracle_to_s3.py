@@ -2,7 +2,7 @@ import os
 from concurrent.futures import ThreadPoolExecutor
 
 # Define the folder where your Python scripts are located
-scripts_folder = r"C:\Users\nikhil.pabbithi\Desktop\etl python training\ETL_nikhil\01_python\oracle_to_s3_scripts"
+scripts_folder = r"C:\Nikhil\ETL_PYTHON\ETL_nikhil\01_python\oracle_to_s3_scripts"
 
 # Get all Python scripts in the folder
 python_scripts = ['customers.py', 'employees.py', 'offices.py', 'orderdetails.py', 'orders.py', 'payments.py', 'productlines.py', 'products.py']

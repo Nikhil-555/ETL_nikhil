@@ -142,7 +142,7 @@ def main(table_name, columns):
 
 
 table_name = "orders"
-columns = ["orderNumber", "orderDate", "requiredDate", "shippedDate", "status", "customerNumber"]
+columns = ['ORDERNUMBER', 'ORDERDATE', 'REQUIREDDATE', 'SHIPPEDDATE', 'STATUS', 'CUSTOMERNUMBER', 'CREATE_TIMESTAMP', 'UPDATE_TIMESTAMP', 'CANCELLEDDATE']
 
 # Run the main function
 if __name__ == "__main__":

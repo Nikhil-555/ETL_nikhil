@@ -141,5 +141,5 @@ def main(table_name, columns):
     conn2.close()
 
 table_name = "products"
-columns = ["productCode", "productName", "productLine", "productScale", "productVendor", "quantityInStock", "buyPrice", "MSRP"]
+columns = ['PRODUCTCODE', 'PRODUCTNAME', 'PRODUCTLINE', 'PRODUCTSCALE', 'PRODUCTVENDOR', 'QUANTITYINSTOCK', 'BUYPRICE', 'MSRP', 'CREATE_TIMESTAMP', 'UPDATE_TIMESTAMP']
 main(table_name, columns)

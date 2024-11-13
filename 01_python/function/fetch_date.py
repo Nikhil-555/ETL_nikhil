@@ -41,15 +41,27 @@ def fetch_date_value(conn1):
     """
     cursor.execute(query)
     result = cursor.fetchone()
-    
+
     if result:
         return result[1]  # Returns the batch_control_date as YYYYMMDD
     else:
         raise ValueError("No date value found in batch_control table")
     
 
+def batch_no(conn1):
+    cursor = conn1.cursor()
+    query = """
+    SELECT etl_batch_no, etl_batch_date from metadata.batch_control
+    """
+    cursor.execute(query)
+    result = cursor.fetchone()
+    
+    if result:
+        return result[0]  # Returns the batch_control_date as YYYYMMDD
+    else:
+        raise ValueError("No date value found in batch_control table")
+
+
 conn1 = connect_to_redshift()
 fetch_date_value(conn1)
-
-
-conn1.close()
+batch_no(conn1)

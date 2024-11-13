@@ -140,5 +140,5 @@ def main(table_name, columns):
     conn2.close()
 
 table_name = "employees"
-columns = ["employeeNumber", "lastName", "firstName", "extension", "email", "officeCode", "reportsTo", "jobTitle"]
+columns = ['EMPLOYEENUMBER', 'LASTNAME', 'FIRSTNAME', 'EXTENSION', 'EMAIL', 'OFFICECODE', 'REPORTSTO', 'JOBTITLE', 'CREATE_TIMESTAMP', 'UPDATE_TIMESTAMP']
 main(table_name, columns)
