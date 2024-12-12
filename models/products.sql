@@ -7,7 +7,7 @@ WITH batch_metadata AS (
     SELECT
         etl_batch_no,
         etl_batch_date
-    FROM etl_metadata.batch_control
+    FROM metadata.batch_control
    
 ),
 
